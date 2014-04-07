@@ -1,7 +1,14 @@
 <h1>Lines</h1>
+<p><%= link_to "Add", new_line_path %> a new line.</p>
 
-<ol>
-  <% @lines.each do |l| %>
-    <li><%= l.name %></li>
-  <% end %>
-</ol>
+<% if @lines.any? %>
+  <ol>
+    <% @lines.each do |l| %>
+      <li><%= link_to "#{l.name}", line_path(l.id) %></li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>There are no lines... <%= link_to "add", new_line_path %> line.</p>
+<% end %>
+
+

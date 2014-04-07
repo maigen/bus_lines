@@ -1,0 +1,9 @@
+<h1>Line</h1>
+
+<p><%= @line.name %></p>
+<p>
+  <%= link_to "Edit", edit_line_path(@line.id)  %> |
+  <%= link_to "Delete", line_path(@line.id), method: "delete", confirm: "Are you sure?"  %> |
+  <%= link_to "Go to Lines", lines_path %>
+  <!-- show all the stops on the this line (not there yet) -->
+</p>
