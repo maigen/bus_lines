@@ -20,10 +20,12 @@ class LinesController < ApplicationController
 
   def show
     @line = Line.find(params[:id])
+    @stations = @line.stations
   end
 
   def update
     @line = Line.find(params[:id])
+    @stations = @line.stations
 
     if @line.update(params[:line])
       flash[:notice] = "Line updated."

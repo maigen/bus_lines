@@ -1,2 +1,17 @@
-<h1>Stations#show</h1>
-<p>Find me in app/views/stations/show.html.erb</p>
+<h1>Lines that come to <%= @station.name %></h1>
+
+<% @lines.each do |l| %>
+  <% if @lines.empty? %>
+    <p>There are no lines that come to this station.</p>
+  <% else %>
+    <ul>
+      <li><%= l.name %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<p>
+  <%= link_to "Edit Station", edit_station_path(@station.id)  %> |
+  <%= link_to "Delete Station", station_path(@station.id), method: "delete", confirm: "Are you sure?"  %> |
+  <%= link_to "Go to Stations", stations_path %>
+</p>

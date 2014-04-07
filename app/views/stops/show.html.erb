@@ -1,0 +1,9 @@
+<h1>Station</h1>
+
+<p><%= @station.name %></p>
+<p>
+  <%= link_to "Edit", edit_station_path(@station.id)  %> |
+  <%= link_to "Delete", station_path(@station.id), method: "delete", confirm: "Are you sure?"  %> |
+  <%= link_to "Go to Stations", stations_path %>
+  <!-- show all the stops on the this station (not there yet) -->
+</p>

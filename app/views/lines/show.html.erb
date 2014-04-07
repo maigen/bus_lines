@@ -1,9 +1,17 @@
-<h1>Line</h1>
+<h1>Stops on the <%= @line.name %></h1>
 
-<p><%= @line.name %></p>
+<% @stations.each do |s| %>
+  <% if @stations.empty? %>
+    <p>There stops on this line.</p>
+  <% else %>
+    <ul>
+      <li><%= s.name %></li>
+    </ul>
+  <% end %>
+<% end %>
+
 <p>
-  <%= link_to "Edit", edit_line_path(@line.id)  %> |
-  <%= link_to "Delete", line_path(@line.id), method: "delete", confirm: "Are you sure?"  %> |
+  <%= link_to "Edit Line", edit_line_path(@line.id)  %> |
+  <%= link_to "Delete Line", line_path(@line.id), method: "delete", confirm: "Are you sure?"  %> |
   <%= link_to "Go to Lines", lines_path %>
-  <!-- show all the stops on the this line (not there yet) -->
 </p>
