@@ -1,6 +1,9 @@
 class StopsController < ApplicationController
   def index
+    @stop = Stop.new
     @stops = Stop.all
+    @stations = Station.all
+    @lines = Line.all
   end
 
   def new

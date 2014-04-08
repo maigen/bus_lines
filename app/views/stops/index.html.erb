@@ -1,12 +1,5 @@
-<h1>Stations</h1>
-<p><%= link_to "Add", new_station_path %> a new station.</p>
+<h1>Create Stops</h1>
 
-<% if @stations.any? %>
-  <ol>
-    <% @stations.each do |s| %>
-      <li><%= link_to "#{s.name}", station_path(s.id) %></li>
-    <% end %>
-  </ol>
-<% else %>
-  <p>There are no stations... <%= link_to "add", new_station_path %> station.</p>
+<%= form_for(@stop) do |f| %>
+  <%= f.collection_select :line_id, Line.all, :id, :name %>
 <% end %>
